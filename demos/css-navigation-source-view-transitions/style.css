@@ -1,0 +1,328 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text: #2d3a2e;
+  --color-muted: #6b7a6c;
+  --color-bg: #f7f5ef;
+  --color-accent: #e0643c;
+  --color-green: #4f7a52;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+}
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 16px 24px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgb(0 0 0 / 0.06);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  margin-right: auto;
+  font-size: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.cart {
+  position: relative;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  min-width: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  background: var(--color-accent);
+}
+
+/* ---------- 一覧ページ ---------- */
+.banner {
+  padding: 40px 32px;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(120deg, var(--color-green), #8db36b);
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.banner-lead {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 4px 16px;
+  border: 1px solid #d9ddd2;
+  border-radius: 999px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.chips .is-active {
+  color: #fff;
+  border-color: var(--color-green);
+  background: var(--color-green);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  overflow: hidden;
+  border-radius: 16px;
+  text-decoration: none;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.06);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 12px 16px 16px;
+}
+
+.producer {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.name {
+  /* 一覧と詳細で文字サイズが違っても、テキストの幅に合わせて変形させるため */
+  width: fit-content;
+  margin: 2px 0 4px;
+  font-size: 17px;
+}
+
+.price {
+  margin: 0;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.price span,
+.detail-price span {
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--color-muted);
+}
+
+/* ---------- 詳細ページ ---------- */
+.breadcrumb {
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.hero-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.detail-name {
+  width: fit-content;
+  margin: 4px 0 8px;
+  font-size: clamp(26px, 4vw, 36px);
+}
+
+.detail-price {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.detail-desc {
+  margin: 0 0 24px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.qty select {
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: var(--color-accent);
+  cursor: pointer;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.support {
+  margin: 16px 0 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.site-footer {
+  padding: 32px 24px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.credit {
+  font-size: 11px;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    display: none;
+  }
+
+  .site-header {
+    justify-content: space-between;
+  }
+
+  .detail {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ======================================================
+   ここから View Transitions
+   ====================================================== */
+
+/* ページ遷移の View Transition を有効にする宣言（@view-transition）は、各HTMLの head に書いている */
+
+/* 一覧ページ：クリックされたリンク（遷移のきっかけ）の中の画像と商品名にだけ名前を付ける */
+a:navigation-source .thumb {
+  view-transition-name: product-image;
+}
+
+a:navigation-source .name {
+  view-transition-name: product-name;
+}
+
+/* 詳細ページ：対応する要素に同じ名前を付けると、一覧のカードから変形していくように見える */
+.hero-img {
+  view-transition-name: product-image;
+}
+
+.detail-name {
+  view-transition-name: product-name;
+}
+
+/* 変形の速さとイージング */
+::view-transition-group(product-image),
+::view-transition-group(product-name) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none;
+  }
+}

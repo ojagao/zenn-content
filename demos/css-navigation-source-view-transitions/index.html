@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>:navigation-source デモ | ひだまりマルシェ</title>
+  <!-- ページ遷移の View Transition を有効にする宣言は、外部CSSではなく head に直接書く。
+       外部CSSの読み込みが遅いと、遷移先ページで宣言が間に合わずトランジションが打ち切られるため -->
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <!-- 最初の描画より前に pagereveal を登録したいので head で読み込む -->
+  <script src="back-transition.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">ひだまりマルシェ</a>
+    <nav class="nav"><a href="index.html">商品一覧</a><a href="#">生産者</a><a href="#">よくある質問</a></nav>
+    <a class="cart" href="#" aria-label="カート">🛒<span class="cart-count">0</span></a>
+  </header>
+  <main class="container">
+    <section class="banner">
+      <p class="banner-lead">産地直送</p>
+      <h1>今週のおすすめ</h1>
+      <p class="support" id="support"></p>
+    </section>
+    <ul class="chips"><li class="is-active">すべて</li><li>くだもの</li><li>野菜</li><li>加工品</li></ul>
+    <div class="product-grid">
+      <a class="product-card" href="strawberry.html">
+        <img class="thumb" src="https://picsum.photos/id/1080/600/600" alt="あまおう風いちご">
+        <div class="product-body">
+          <p class="producer">ひだまり農園（福岡）</p>
+          <h2 class="name">あまおう風いちご</h2>
+          <p class="price">¥1,280<span>（税込）</span></p>
+        </div>
+      </a>
+      <a class="product-card" href="raspberry.html">
+        <img class="thumb" src="https://picsum.photos/id/102/600/600" alt="完熟ラズベリー">
+        <div class="product-body">
+          <p class="producer">高原ベリー畑（長野）</p>
+          <h2 class="name">完熟ラズベリー</h2>
+          <p class="price">¥980<span>（税込）</span></p>
+        </div>
+      </a>
+      <a class="product-card" href="grape.html">
+        <img class="thumb" src="https://picsum.photos/id/674/600/600" alt="巨峰">
+        <div class="product-body">
+          <p class="producer">ぶどうの丘（山梨）</p>
+          <h2 class="name">巨峰</h2>
+          <p class="price">¥2,480<span>（税込）</span></p>
+        </div>
+      </a>
+      <a class="product-card" href="honey.html">
+        <img class="thumb" src="https://picsum.photos/id/312/600/600" alt="百花はちみつ">
+        <div class="product-body">
+          <p class="producer">みつばち工房（岐阜）</p>
+          <h2 class="name">百花はちみつ</h2>
+          <p class="price">¥1,680<span>（税込）</span></p>
+        </div>
+      </a>
+      <a class="product-card" href="vegetables.html">
+        <img class="thumb" src="https://picsum.photos/id/292/600/600" alt="季節の野菜セット">
+        <div class="product-body">
+          <p class="producer">ひだまり農園（福岡）</p>
+          <h2 class="name">季節の野菜セット</h2>
+          <p class="price">¥2,980<span>（税込）</span></p>
+        </div>
+      </a>
+      <a class="product-card" href="salad.html">
+        <img class="thumb" src="https://picsum.photos/id/488/600/600" alt="ミックスリーフ">
+        <div class="product-body">
+          <p class="producer">水耕ファーム（千葉）</p>
+          <h2 class="name">ミックスリーフ</h2>
+          <p class="price">¥480<span>（税込）</span></p>
+        </div>
+      </a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>© ひだまりマルシェ（架空のお店です）</p>
+    <p class="credit">Photos: Unsplash via Lorem Picsum</p>
+  </footer>
+  <script src="support.js"></script>
+</body>
+</html>
