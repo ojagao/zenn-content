@@ -172,6 +172,12 @@ h2 {
   box-shadow: 0 8px 24px rgb(59 47 42 / 0.08);
 }
 
+.menu-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
 .menu-body {
   padding: 16px 20px 20px;
 }
