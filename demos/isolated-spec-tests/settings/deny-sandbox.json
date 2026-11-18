@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": ["Read(./spec-tests/**)", "Edit(./spec-tests/**)", "Bash(npm run spec*)"]
+  },
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false,
+    "filesystem": {
+      "denyRead": ["./spec-tests"]
+    }
+  }
+}

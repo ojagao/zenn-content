@@ -1,0 +1,5 @@
+{
+  "permissions": {
+    "deny": ["Read(./spec-tests/**)", "Edit(./spec-tests/**)", "Bash(npm run spec*)"]
+  }
+}

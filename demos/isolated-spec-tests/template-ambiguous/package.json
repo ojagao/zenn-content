@@ -1,0 +1,9 @@
+{
+  "name": "isolated-spec-tests-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "spec": "node --test \"spec-tests/**/*.test.js\""
+  }
+}
